@@ -138,7 +138,11 @@ chatSection.addEventListener("click", (e) => {
         .catch((err) => console.log(err));
     } else {
       li.remove();
-      if (confirm("Da li zelite trajno da izbrisete ovu poruku?") == true) {
+      if (
+        confirm(
+          "Do you also want to permanently delete the message from another user?"
+        ) == true
+      ) {
         chatroom.chats
           .doc(id)
           .delete()
