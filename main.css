@@ -1,0 +1,329 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(184, 91%, 17%);
+  --clr-primary-2: hsl(185, 84%, 25%);
+  --clr-primary-3: hsl(185, 81%, 29%);
+  --clr-primary-4: hsl(184, 77%, 34%);
+  /* primary/main color */
+  --clr-primary-5: hsl(185, 62%, 45%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(185, 57%, 50%);
+  --clr-primary-7: hsl(184, 65%, 59%);
+  --clr-primary-8: hsl(184, 80%, 74%);
+  --clr-primary-9: hsl(185, 94%, 87%);
+  --clr-primary-10: hsl(186, 100%, 94%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --ff-primary: "Lato", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*
+=============== 
+Global CSS
+===============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  background: url(b.jpg);
+} */
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--clr-primary-5);
+  border: 2px solid var(--clr-white);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.margin {
+  margin-bottom: 0.5rem;
+}
+
+/*
+=============== 
+Header CSS
+===============
+*/
+
+h1,
+h3 {
+  color: var(--clr-grey-3);
+  text-align: center;
+}
+
+/*
+=============== 
+Nav CSS
+===============
+*/
+
+#nav-ul li {
+  background-color: var(--clr-primary-5);
+  color: var(--clr-white);
+  padding: 0.5rem 0;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.05rem;
+  border: 2px solid var(--clr-white);
+}
+
+#nav-ul li:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-primary-5);
+  border-color: var(--clr-primary-5);
+}
+
+/*
+=============== 
+Chat Section CSS
+===============
+*/
+
+#chat-section {
+  height: 360px;
+  border: 5px solid var(--clr-primary-5);
+  overflow: auto;
+  /* overflow-x: hidden; */
+}
+
+#chat-section::-webkit-scrollbar {
+  width: 1rem;
+}
+#chat-section::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
+}
+#chat-section::-webkit-scrollbar-thumb {
+  background-color: var(--clr-primary-5);
+  border: 2px solid var(--clr-white);
+}
+
+#poruke-ul li {
+  border: 3px var(--clr-white) solid;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  color: var(--clr-white);
+  background-color: var(--clr-primary-5);
+  width: 50%;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.right-messages {
+  float: right;
+  border-top-left-radius: 15px;
+}
+
+.left-messages {
+  float: left;
+  border-top-right-radius: 15px;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.message {
+  color: var(--clr-grey-1);
+}
+
+.date {
+  color: var(--clr-grey-2);
+}
+.bin {
+  float: right;
+  cursor: pointer;
+}
+/*
+=============== 
+Choose Color Section
+===============
+*/
+
+#change-color-btn {
+  padding: 0.25rem 0;
+  background-color: var(--clr-primary-5);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+#change-color-input {
+  cursor: pointer;
+}
+/*
+=============== 
+Input Section CSS
+===============
+*/
+
+#update-btn,
+#send-btn,
+#change-color-btn {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-white);
+  border-radius: 20px;
+}
+
+#update-btn,
+#send-btn,
+#send-input,
+#update-input,
+#change-color-btn {
+  padding: 0.5rem 0.35rem;
+}
+
+#change-color-input {
+  height: 2.1rem;
+  padding: 0.1rem 0.25rem;
+}
+
+#update-btn:hover,
+#send-btn:hover,
+#change-color-btn:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-primary-5);
+  border-color: var(--clr-primary-5);
+  cursor: pointer;
+}
+
+/*
+=============== 
+User show CSS
+===============
+*/
+
+#user-show {
+  position: absolute;
+  right: 50%;
+  background-color: var(--clr-primary-5);
+  border: 2px solid var(--clr-white);
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  transform: translateX(+50%);
+}
+
+/*
+=============== 
+Grid Media Screen CSS
+===============
+*/
+
+@media only screen and (min-width: 651px) {
+  [class*="col-"] {
+    float: left;
+  }
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  [class*="col-"] {
+    float: left;
+    width: 100%;
+  }
+  a {
+    margin-bottom: 0.25rem;
+  }
+  #send-input,
+  #update-input,
+  #change-color-input {
+    margin-bottom: 1rem;
+  }
+  .remove {
+    display: none;
+  }
+  .nav-ul li {
+    border-radius: 0px;
+  }
+  #update-btn,
+  #send-btn {
+    border-radius: 0px;
+  }
+  #change-color-btn {
+    border-radius: 0px;
+  }
+}

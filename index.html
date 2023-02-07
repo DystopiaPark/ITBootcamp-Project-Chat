@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Projekat</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="row margin">
+      <div class="col-4 remove">&nbsp;</div>
+      <div class="col-4">
+        <h1>ITBootcamp Chat</h1>
+        <h3>Choose a chatroom</h3>
+      </div>
+      <div class="col-4">&nbsp;</div>
+    </header>
+    <!-- NAV -->
+    <nav class="row margin">
+      <ul id="nav-ul">
+        <div class="col-2">&nbsp;</div>
+        <a href="#" class="col-2"><li id="#general">#general</li></a>
+        <a href="#" class="col-2"><li id="#js">#js</li></a>
+        <a href="#" class="col-2"><li id="#homeworks">#homeworks</li></a>
+        <a href="#" class="col-2"><li id="#tests">#tests</li></a>
+        <div class="col-2 remove">&nbsp;</div>
+      </ul>
+    </nav>
+    <!-- CHAT SECTION -->
+    <section class="row margin">
+      <div class="col-2 remove">&nbsp;</div>
+      <div class="col-8" id="chat-section">
+        <ul id="poruke-ul"></ul>
+      </div>
+      <div class="col-2 remove">&nbsp;</div>
+    </section>
+    <!-- CHOOSE COLOR SECTION -->
+    <section class="row color-section margin">
+      <div class="col-2 remove">&nbsp;</div>
+      <input
+        type="color"
+        id="change-color-input"
+        class="col-3"
+        value="#FFFFFF"
+      />
+      <button id="change-color-btn" class="col-2">Update color</button>
+      <div class="col-5 remove">&nbsp;</div>
+    </section>
+    <!-- INPUT SECTION -->
+    <section>
+      <div class="row margin">
+        <div class="col-2 remove">&nbsp;</div>
+        <textarea
+          name=""
+          name="message"
+          id="send-input"
+          placeholder="Your message..."
+          rows="1"
+          class="col-3"
+        ></textarea>
+        <button id="send-btn" class="col-1">Send</button>
+        <div class="col-6 remove">&nbsp;</div>
+      </div>
+      <div class="row margin">
+        <div class="col-2 remove">&nbsp;</div>
+        <textarea
+          name=""
+          name="update"
+          id="update-input"
+          placeholder="Your username..."
+          rows="1"
+          class="col-3"
+        ></textarea>
+        <button id="update-btn" class="col-1">Update</button>
+        <div class="col-6 remove">&nbsp;</div>
+      </div>
+    </section>
+    <!-- IME SECTION -->
+    <p id="ime-section"></p>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCRtvn6iXsLHXg_31QrI6SmHhDCgTZ0oyA",
+        authDomain: "itbootcamp-js8.firebaseapp.com",
+        projectId: "itbootcamp-js8",
+        storageBucket: "itbootcamp-js8.appspot.com",
+        messagingSenderId: "123927748147",
+        appId: "1:123927748147:web:d3b796263361d7e7fd8d46",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
