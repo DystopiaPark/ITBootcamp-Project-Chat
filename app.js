@@ -134,7 +134,7 @@ chatSection.addEventListener("click", (e) => {
       li.remove();
       if (
         confirm(
-          "Do you also want to also permanently delete the message from another user?"
+          "Do you want to also permanently delete the message from another user?"
         ) == true
       ) {
         chatroom.chats
