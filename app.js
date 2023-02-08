@@ -51,8 +51,8 @@ onload = (e) => {
 };
 
 // Objects
-let chatroom = new Chatroom(room, username); // Object of chatroom class
-let chatUI = new ChatUI(ul); // Object of ChatUI class
+let chatroom = new Chatroom(room, username);
+let chatUI = new ChatUI(ul);
 
 // Listens and makes changes
 let makeChange = () => {
@@ -62,11 +62,10 @@ let makeChange = () => {
   });
 };
 makeChange();
-console.log(makeChange);
 
 // Inputs chat
 sendBtn.addEventListener("click", () => {
-  if (sendInput.value.trim().length == 0) return (sendInput.value = ""); // guard
+  if (sendInput.value.trim().length == 0) return (sendInput.value = "");
   chatroom
     .addChat(sendInput.value)
     .then(() => {
@@ -91,7 +90,6 @@ updateBtn.addEventListener("click", () => {
   window.scrollTo(0, document.body.scrollHeight);
   chatroom.updateUsername(chatroom.username);
   makeChange();
-  console.log(makeChange);
   setTimeout(() => {
     ime.remove();
   }, 3000);
@@ -100,14 +98,10 @@ updateBtn.addEventListener("click", () => {
 // Changes room
 navUL.addEventListener("click", (e) => {
   if (e.target.tagName == "LI") {
-    // 1. Uzimamo ime sobe na koju je kliknuto
     let newRoom = e.target.textContent;
-    // 2. Update sobe na koju je kliknuto
     chatroom.updateRoom(newRoom);
-    // 3. Izbrisati sve poruke sa ekrana
     chatUI.clearUL();
     localStorage.setItem("room", newRoom);
-    // 4. Prikazi chatove
     makeChange();
   }
 });

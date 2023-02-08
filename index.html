@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
     <link rel="stylesheet" href="main.css" />
     <title>Projekat</title>
   </head>
@@ -79,12 +80,12 @@
     </section>
     <!-- IME SECTION -->
     <p id="ime-section"></p>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- SCRIPTS -->
+    <!-- The core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-
     <script>
-      // Your web app's Firebase configuration
+      // Web app's Firebase configuration
       const firebaseConfig = {
         apiKey: "AIzaSyCRtvn6iXsLHXg_31QrI6SmHhDCgTZ0oyA",
         authDomain: "itbootcamp-js8.firebaseapp.com",
@@ -93,7 +94,6 @@
         messagingSenderId: "123927748147",
         appId: "1:123927748147:web:d3b796263361d7e7fd8d46",
       };
-
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       let db = firebase.firestore();

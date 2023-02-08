@@ -3,7 +3,7 @@ class Chatroom {
     this.room = room;
     this.username = username;
     this.chats = db.collection("chats");
-    this.unsub; // Bice undefined prilikom kreiranja objekata
+    this.unsub;
     this.unsub2;
   }
   // Room GET/SET
@@ -21,24 +21,26 @@ class Chatroom {
     if (u.length >= 2 && u.length <= 10 && u.trim().length != 0) {
       this._username = u;
     } else {
-      window.alert("Neodgovarajuci username");
+      window.alert(
+        "Invalid Username! Username has to be beetween 2 and 10 characters long and can't be only white space."
+      );
     }
   }
-  // METOD Update Room
+  // METHOD Update Room
   updateRoom(ur) {
-    this.room = ur; // pozove seter u promeni sobu
+    this.room = ur;
     if (this.unsub) {
       this.unsub();
     }
   }
-  // METOD Update Username
+  // METHOD Update Username
   updateUsername(u) {
-    this.username = u; // pozove seter u promeni sobu
+    this.username = u;
     if (this.unsub) {
       this.unsub();
     }
   }
-  // METOD addChat
+  // METHOD addChat
   async addChat(p) {
     let date2 = new Date();
     let docChat = {
@@ -48,9 +50,9 @@ class Chatroom {
       created_at: firebase.firestore.Timestamp.fromDate(date2),
     };
     let response = await this.chats.add(docChat);
-    return response; // vraca promise i od njega mozemo potrazivati .then i .catch
+    return response;
   }
-  // METOD getChats (pracenje poruka u bazi i ispis dodatih poruka)
+  // METHOD getChats
   getChats(cb) {
     this.unsub = this.chats
       .where("room", "==", this.room)

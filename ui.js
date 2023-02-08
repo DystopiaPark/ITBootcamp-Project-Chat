@@ -1,19 +1,15 @@
 export class ChatUI {
-  //konstruktor
   constructor(l) {
     this.list = l;
   }
-
-  //geter i seter
-  set list(l) {
-    this._list = l;
-  }
-
+  // List GET/SET
   get list() {
     return this._list;
   }
-
-  // METODA templateLi
+  set list(l) {
+    this._list = l;
+  }
+  // METHOD templateLi
   templateLI(metadata) {
     let data = metadata.data();
     let id = metadata.id;
@@ -54,7 +50,7 @@ export class ChatUI {
       this.list.innerHTML += htmlLI;
     }
   }
-  // METODA clearUL
+  // METHOD clearUL
   clearUL() {
     this.list.innerHTML = "";
   }
